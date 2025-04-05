@@ -189,11 +189,11 @@
         .modal-content {
             background-color: white;
             margin: 29% auto;
-            padding: 18px;
+            padding: the 18px;
             border: 1px solid #007bff;
             border-radius: 60px;
             width: 180px;
-            font-size: 0.3px;
+            font-size: 0.3px
             max-width: 70%;
             text-align: center;
             max-height: 60vh;
@@ -257,7 +257,7 @@
     <a class="button" href="Statistiques.html" id="statistiquesButton">
       <i class="fas fa-chart-bar"></i> Temukan</a>
     <a class="button" href="Contact.html"><i class="fas fa-envelope"></i>Kontak</a>
-    <a class="button" href="Terms.html"><i class="fas fa-file-contract"></i>Ketentuan</a>
+    <a class="button" href="Terms.html"><i class="fas fa-file-contract"></i>Syarat</a>
     <a class="button" href="Confidentialité.html"><i class="fas fa-file-contract"></i>Privasi</a>
   </div>
 
@@ -270,7 +270,7 @@
     setInterval(() => {
       button.style.borderBottom = `4px solid ${colors[index]}`;
       index = (index + 1) % colors.length; // Siklus melalui warna
-    }, 400); // Ubah warna setiap detik
+    }, 400); // Mengganti warna setiap detik
   </script>
 
   <div class="divider"></div>
@@ -283,7 +283,7 @@
   <div class="divider"></div>
 
   <div class="footer-title">
-    Bergabunglah dengan kami untuk menemukan rahasia generasi kita hanya dengan beberapa klik!
+    Bergabunglah dengan kami untuk menemukan rahasia generasi kita hanya dalam beberapa klik!
   </div>
 
   <input type="date" class="date-input" id="birthdate" placeholder="Pilih tanggal lahir Anda" min="1900-01-01" max="" />
@@ -291,7 +291,7 @@
     <option value="" disabled selected>Pilih negara kelahiran Anda</option>
   </select>
   <p style="text-align: center; color: black; font-size: 0.7em; margin-top: 5px; text-decoration: underline; text-decoration-color: rgb(0, 123, 191);">
-    Dengan mengirimkan, Anda menyetujui ketentuan penggunaan kami.
+    Dengan mengirimkan, Anda menyetujui syarat penggunaan kami.
   </p>
   <button class="submit-button" type="submit">Kirim</button>
 
@@ -301,7 +301,7 @@
 
   <div class="rectangle">
     <div class="text-line bold" style="font-size: 1em; color: #0056b3;">Bagaimana cara kerjanya?</div>
-    <div class="text-line">Ada dua pemilih tersedia untuk Anda: yang pertama adalah kalender untuk memilih tanggal lahir Anda, dan yang kedua adalah pemilih untuk negara kelahiran Anda. Setelah membuat pilihan, klik "Kirim". Setelah itu, Anda akan diminta untuk menentukan jenis kelamin Anda; klik pada opsi ini untuk menjadi kontributor. Akhirnya, klik tombol "Temukan" yang berkedip hijau. Anda kemudian akan menemukan dua pemilih baru: navigasikan sesuai preferensi Anda untuk menjelajahi statistik.</div>
+    <div class="text-line"> Tersedia dua pemilih untuk Anda: yang pertama adalah kalender untuk memilih tanggal lahir Anda, dan yang kedua adalah pemilih untuk negara kelahiran Anda. Setelah Anda membuat pilihan, klik "Kirim". Setelah itu, Anda akan diminta untuk menentukan jenis kelamin Anda; klik pada opsi ini untuk menjadi kontributor. Terakhir, klik tombol "Temukan", yang berkedip lawngreen. Anda kemudian akan menemukan dua pemilih baru: navigasikan sesuai preferensi Anda untuk menjelajahi statistik. </div>
   </div>
 
   <div class="text-line" style="text-align: center; color: black;">
@@ -335,15 +335,15 @@
     <div class="modal-content">
       <div class="modal-header">Jenis kelamin Anda?</div>
       
-      <div class="gender-category">Gender biner</div>
+      <div class="gender-category">Jenis kelamin biner</div>
       <div class="modal-footer">
-        <button class="close-button gender-option" value="Man">Man</button>
-        <button class="close-button gender-option" value="Woman">Woman</button>
+        <button class="close-button gender-option" value="Man">Laki-laki</button>
+        <button class="close-button gender-option" value="Woman">Perempuan</button>
       </div>
       
-      <div class="gender-category">Gender non-biner</div>
+      <div class="gender-category">Jenis kelamin non-biner</div>
       <div class="modal-footer">
-        <button class="close-button gender-option" value="Non-binary">Non-binary</button>
+        <button class="close-button gender-option" value="Non-binary">Non-biner</button>
         <button class="close-button gender-option" value="Genderqueer">Genderqueer</button>
         <button class="close-button gender-option" value="Genderfluid">Genderfluid</button>
         <button class="close-button gender-option" value="Agender">Agender</button>
@@ -382,20 +382,20 @@
     signInAnonymously(auth)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Pengguna terhubung : ", user.uid);
+        console.log("Pengguna terhubung: ", user.uid);
       })
       .catch((error) => {
-        console.error("Kesalahan saat koneksi anonim : ", error);
+        console.error("Kesalahan selama login anonim: ", error);
       });
 
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("birthdate").setAttribute('max', today);
 
-    // Muat daftar negara
+    // Memuat daftar negara
     fetch('https://restcountries.com/v3.1/all')
       .then(response => {
         if (!response.ok) {
-          throw new Error('Kesalahan jaringan : ' + response.status);
+          throw new Error('Kesalahan jaringan: ' + response.status);
         }
         return response.json();
       })
@@ -409,7 +409,7 @@
           countrySelect.appendChild(option);
         });
       })
-      .catch(error => console.error('Kesalahan saat memuat negara :', error));
+      .catch(error => console.error('Kesalahan memuat negara:', error));
 
     let lastSubmittedId = null;
 
@@ -419,7 +419,7 @@
 
       if (birthdate && country) {
         const submitButton = document.querySelector('.submit-button');
-        submitButton.textContent = "Harap tunggu...";
+        submitButton.textContent = "Mohon tunggu...";
         submitButton.style.backgroundColor = 'orange';
 
         document.getElementById('genderModal').style.display = 'block';
@@ -428,7 +428,7 @@
       }
     });
 
-    // Tambahkan listener ke semua tombol opsi gender
+    // Menambahkan pendengar acara ke semua tombol opsi gender
     document.querySelectorAll('.gender-option').forEach(button => {
       button.addEventListener('click', function() {
         submitData(this.value);
@@ -457,7 +457,7 @@
       }).catch((error) => {
         submitButton.style.backgroundColor = 'red';
         submitButton.textContent = "Kesalahan";
-        console.error("Kesalahan saat mengirim : ", error);
+        console.error("Kesalahan selama pengiriman: ", error);
       });
     }
 
@@ -474,7 +474,7 @@
             document.getElementById('resetButton').style.display = "none";
           })
           .catch((error) => {
-            console.error("Kesalahan saat mengatur ulang data : ", error);
+            console.error("Kesalahan selama reset data: ", error);
           });
       }
     });
